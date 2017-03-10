@@ -14,10 +14,11 @@ services:
         depends_on:
             - db
     db:
-        image: postgres:9.5
+        image: postgres:9.5-alpine
         container_name: rss_db
         volumes:
             - data:/var/lib/postgresql/data
+            - ./backups:/backups
         networks:
             - network
         ports:
