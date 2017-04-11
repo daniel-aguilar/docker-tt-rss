@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
     supervisor
 
 RUN mkdir -p /var/lock/apache2 /var/run/apache2
-RUN mkdir -p /srv/www/tt-rss && chown -R www-data:www-data /srv/www/tt-rss/
 
 ADD supervisor.conf /etc/supervisor/conf.d/tt-rss.conf
 ADD apache.conf /etc/apache2/sites-available/000-default.conf

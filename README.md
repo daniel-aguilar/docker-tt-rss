@@ -7,7 +7,7 @@ locally after formatting my computer or switching environments.
 I made it so I can clone `tt-rss` in the host, and mount it as a volume
 inside the web server container, giving me full access to the
 repository, meaning I can: install plugins/themes, change `config.php`
-and, `git pull` fast and easy.
+and, and `git pull` like you normally would.
 
 The web server image consists of [Debian][debian] with [Apache][apache],
 [PHP][php] and [Supervisor][supervisor] installed.
@@ -30,23 +30,36 @@ You'll only need to do this once.
 1. Clone this repository and `tt-rss`'s inside it:
 
     ```bash
-    git clone https://github.com/daniel-aguilar/tt-rss_docker.git && cd tt-rss_docker && git clone https://tt-rss.org/git/tt-rss.git tt-rss
+    git clone https://github.com/daniel-aguilar/tt-rss_docker.git tt-rss_docker
+    cd tt-rss_docker
+    git clone https://tt-rss.org/git/tt-rss.git tt-rss
     ```
 
-2. Edit `docker-compose.yaml` to set up your preferred PostgreSQL credentials.
-3. Build the web server image and bring up the services:
+2. *Optional:* Create a user `www-data` and set it as `tt-rss`'s group:
+
+    `chgrp -R www-data tt-rss`
+
+    Otherwise just give others `rwx` permission on `tt-rss`:
+
+    `chmod -R 777 tt-rss`
+
+    This is so the web server can have the correct permissions on that
+    directory.
+
+3. Edit `docker-compose.yaml` to set up your preferred PostgreSQL credentials.
+4. Build the web server image and bring up the services:
 
     `docker-compose -p rss up -d`
 
-    Please use the `-p` option to set the project name as `rss`, so that
-    the volume and network names can be correctly prefixed.
+    Please use the `-p` option to set the project name as `rss`, so the
+    volume and network names can be correctly prefixed.
 
-4. Visit `localhost:80` and run the installer.
+5. Visit `localhost:80` and run the installer.
 
     The database name is the same as the user name. The database
     hostname is `db`, using port `5432`.
 
-5. Visit `localhost:9001` and start the feed_updater daemon.
+6. Visit `localhost:9001` and start the feed_updater daemon.
 
 That's it!
 
