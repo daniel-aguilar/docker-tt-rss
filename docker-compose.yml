@@ -9,8 +9,8 @@ services:
         networks:
             - network
         ports:
-            - "80:80"
-            - "9001:9001"
+            - '127.0.0.1:80:80'
+            - '127.0.0.1:9001:9001'
         depends_on:
             - db
     db:
@@ -22,7 +22,7 @@ services:
         networks:
             - network
         ports:
-            - "5432:5432"
+            - '127.0.0.1:5432:5432'
         environment:
             - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=postgres
