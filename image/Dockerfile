@@ -1,6 +1,7 @@
 FROM debian:jessie-slim
 
-RUN apt-get update && apt-get install -y \
+RUN DEBIAN_FRONTEND=noninteractive \
+    apt-get update && apt-get -y install \
     apache2 \
     php5 \
     php5-curl \
