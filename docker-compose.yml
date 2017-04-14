@@ -1,7 +1,7 @@
 version: '3'
 services:
     web:
-        build: .
+        build: image
         image: tt-rss_docker
         container_name: rss_web
         volumes:
@@ -10,7 +10,6 @@ services:
             - network
         ports:
             - '127.0.0.1:80:80'
-            - '127.0.0.1:9001:9001'
         depends_on:
             - db
     db:
@@ -21,10 +20,7 @@ services:
             - ./backups:/backups
         networks:
             - network
-        ports:
-            - '127.0.0.1:5432:5432'
         environment:
-            - POSTGRES_USER=postgres
             - POSTGRES_PASSWORD=postgres
 
 volumes:
