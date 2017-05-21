@@ -1,4 +1,4 @@
-bk_file=$1
-docker-compose run \
-    --rm db \
-    tar xpf /backups/$(basename $bk_file) -C /var/lib/postgresql/data
+#!/bin/bash
+
+docker-compose run --rm db \
+    tar xpf /backups/$(basename $1) -C /var/lib/postgresql/data
