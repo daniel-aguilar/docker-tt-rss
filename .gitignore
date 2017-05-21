@@ -1,3 +1,4 @@
 tt-rss/
 backups/
 .python-version
+*.swp
