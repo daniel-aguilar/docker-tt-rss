@@ -47,10 +47,7 @@ You only need to do this once.
 
 3. Build the web server image and bring up the services:
 
-    `docker-compose -p rss up -d`
-
-    Please use the `-p` option to set the project name as `rss`, so the
-    volume and network names can be correctly prefixed.
+    `docker-compose up -d`
 
 4. Visit http://localhost and run the installer.
 
@@ -65,15 +62,15 @@ You only need to do this once.
 
 5. Restart the services:
 
-    `docker-compose -p rss restart`
+    `docker-compose restart`
 
 You're done, you can now visit http://localhost again and start reading
 your favorite feeds. Enjoy!
 
 ## Everyday Use
 
-1. Run `docker-compose -p rss start` to start the services
-2. Run `docker-compose -p rss stop` to stop the services
+1. Run `docker-compose start` to start the services
+2. Run `docker-compose stop` to stop the services
 
 ## Backups and Restoration
 
