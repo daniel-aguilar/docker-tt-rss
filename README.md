@@ -8,7 +8,7 @@ switching environments.
 ## Features
 
 * Automatically updated feeds
-* Full access to the `tt-rss` directory:
+* Full access to the TT-RSS directory:
 
     * Install themes and plugins
     * Edit `config.php`
@@ -16,7 +16,7 @@ switching environments.
 
     ...like you normally would.
 
-* Backups and restorations made simple
+* Backups made simple
 
 ## Requirements
 
@@ -24,32 +24,11 @@ switching environments.
 
 ## First Time Set Up
 
-You only need to do this once.
+1. Clone this repository an run the installation script:
 
-1. Clone this repository and `tt-rss`'s inside it:
+    `./install.sh`
 
-    ```bash
-    git clone https://github.com/daniel-aguilar/tt-rss_docker.git
-    cd tt-rss_docker
-    git clone https://tt-rss.org/git/tt-rss.git tt-rss
-    ```
-
-2. *Optional:* Create a user `www-data` and set it as `tt-rss`'s group:
-
-    `chgrp -R www-data tt-rss`
-
-    Otherwise just give others `rwx` permission on `tt-rss`:
-
-    `chmod -R 777 tt-rss`
-
-    This is so the web server can have the correct permissions on that
-    directory.
-
-3. Build the web server image and bring up the services:
-
-    `docker-compose up -d`
-
-4. Visit http://localhost and run the installer.
+2. Visit http://localhost to run the TT-RSS installer.
 
     Database settings are the following:
 
@@ -60,7 +39,7 @@ You only need to do this once.
     * Host name: db
     * Port: 5432
 
-5. Restart the services:
+3. Restart the services:
 
     `docker-compose restart`
 
@@ -72,7 +51,7 @@ your favorite feeds. Enjoy!
 1. Run `docker-compose start` to start the services
 2. Run `docker-compose stop` to stop the services
 
-## Backups and Restoration
+## Backups
 
 Make sure the services are stopped, then:
 
@@ -81,5 +60,5 @@ Make sure the services are stopped, then:
 
 ## Feedback & Contribution
 
-This is a very experimental way of running `tt-rss` tailored for my
+This is a very experimental way of running TT-RSS tailored for my
 preferences, but any feedback/contribution is greatly appreciated.
