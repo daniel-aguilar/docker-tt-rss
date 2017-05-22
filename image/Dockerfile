@@ -11,8 +11,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
     php5-intl \
     supervisor
 
-RUN mkdir -p /var/lock/apache2 /var/run/apache2
-
 ADD supervisor.conf /etc/supervisor/conf.d/tt-rss.conf
 ADD apache.conf /etc/apache2/sites-available/000-default.conf
 
