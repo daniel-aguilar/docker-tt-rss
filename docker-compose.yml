@@ -15,7 +15,6 @@ services:
     container_name: rss_db
     volumes:
       - db_data:/var/lib/postgresql/data
-      - ./backups:/backups
     environment:
       - POSTGRES_PASSWORD=postgres
 
