@@ -1,17 +1,28 @@
-FROM debian:jessie-slim
+FROM debian:stretch-slim
 
 RUN DEBIAN_FRONTEND=noninteractive \
-    apt-get update && apt-get -y install \
-    apache2 \
-    php5 \
-    php5-curl \
-    php5-gd \
-    php5-pgsql \
-    php5-apcu \
-    php5-intl \
-    supervisor
+    apt-get update && \
+    apt-get -y install \
+        apache2 \
+        git \
+        vim \
+        php \
+        php-xml \
+        php-mbstring \
+        php-curl \
+        php-gd \
+        php-pgsql \
+        php-intl \
+        php-apcu \
+        supervisor && \
+    git clone --depth 1 https://tt-rss.org/git/tt-rss.git /srv/www/tt-rss && \
+    chown -R www-data:www-data /srv/www/tt-rss
 
-ADD supervisor.conf /etc/supervisor/conf.d/tt-rss.conf
-ADD apache.conf /etc/apache2/sites-available/000-default.conf
+COPY supervisor.conf /etc/supervisor/conf.d/tt-rss.conf
+COPY apache.conf /etc/apache2/sites-available/000-default.conf
 
-CMD ["supervisord"]
+VOLUME ["/srv/www/tt-rss"]
+
+EXPOSE 80
+
+ENTRYPOINT ["supervisord"]
