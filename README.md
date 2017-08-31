@@ -1,7 +1,8 @@
 # tt-rss_docker
 
-Here's a [Docker](https://www.docker.com/) multi-container application to run
-[Tiny Tiny RSS](https://tt-rss.org/) locally, as quickly as possible.
+Here's a [Docker](https://www.docker.com/) multi-container application to setup
+an instance of [Tiny Tiny RSS](https://tt-rss.org/) locally, as quickly and
+simple as possible.
 
 ## Requirements
 
@@ -31,6 +32,9 @@ Here's a [Docker](https://www.docker.com/) multi-container application to run
 You're done, you can start reading your favorite feeds now. Enjoy!
 
 ## Everyday Use
+
+The services are configured to continually run (even on a system restart)
+unless manually stopped:
 
 1. Run `docker-compose start` to start the services
 2. Run `docker-compose stop` to stop the services
