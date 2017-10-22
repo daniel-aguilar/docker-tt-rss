@@ -41,6 +41,8 @@ unless manually stopped:
 
 ## Backups
 
+While the services are running:
+
 1. Run `backup.sh` to generate a dump file (stored in a `backups` directory)
 2. Run `restore.sh <backup.sql>` to restore `backup.sql`
 
