@@ -39,6 +39,8 @@ unless manually stopped:
 1. Run `docker-compose start` to start the services
 2. Run `docker-compose stop` to stop the services
 
+Additionally, the repository is updated weekly via a cron job.
+
 ## Backups
 
 While the services are running:
