@@ -7,8 +7,6 @@ services:
     container_name: rss_web
     ports:
       - "127.0.0.1:80:80"
-    volumes:
-      - web_data:/srv/www/tt-rss
     depends_on:
       - db
     restart: unless-stopped
@@ -16,12 +14,6 @@ services:
   db:
     image: postgres:9.6-alpine
     container_name: rss_db
-    volumes:
-      - db_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=postgres
     restart: unless-stopped
-
-volumes:
-  web_data:
-  db_data:
