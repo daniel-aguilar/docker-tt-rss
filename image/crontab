@@ -1,2 +1,0 @@
-REPO_PATH=/srv/www/tt-rss
-@weekly www-data git -C $REPO_PATH pull
