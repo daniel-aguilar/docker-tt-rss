@@ -1,9 +1,13 @@
-version: "3"
+version: "3.3"
 
 services:
   web:
     build: ./image
     image: tt-rss_docker
+    volumes:
+      - type: volumes
+        source: web-data
+        target: /srv/www/tt-rss
     container_name: rss_web
     ports:
       - "127.0.0.1:80:80"
@@ -13,7 +17,15 @@ services:
 
   db:
     image: postgres:9.6-alpine
+    volumes:
+      - type: volumes
+        source: db-data
+        target: /var/lib/postgresql/data
     container_name: rss_db
     environment:
       - POSTGRES_PASSWORD=postgres
     restart: unless-stopped
+
+volumes:
+  web-data:
+  db-data:
