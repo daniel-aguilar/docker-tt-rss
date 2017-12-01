@@ -1,5 +1,6 @@
 #!/bin/bash
 
+supervisorctl stop web_server feed_updater
 sudo -u www-data git -C /srv/www/tt-rss pull
-supervisorctl restart web_server feed_updater
+supervisorctl start web_server feed_updater
 echo "$(date +%Y-%m-%d_%H-%M) TT-RSS was updated"
