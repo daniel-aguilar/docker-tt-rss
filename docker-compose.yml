@@ -5,7 +5,7 @@ services:
     build: ./image
     image: tt-rss_docker
     volumes:
-      - type: volumes
+      - type: volume
         source: web-data
         target: /srv/www/tt-rss
     container_name: rss_web
@@ -18,7 +18,7 @@ services:
   db:
     image: postgres:9.6-alpine
     volumes:
-      - type: volumes
+      - type: volume
         source: db-data
         target: /var/lib/postgresql/data
     container_name: rss_db
