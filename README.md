@@ -39,7 +39,12 @@ unless manually stopped:
 1. Run `docker-compose start` to start the services
 2. Run `docker-compose stop` to stop the services
 
-Additionally, the repository is updated weekly via a cron job.
+## Updating TT-RSS
+
+The `web` service has a cron job which updates the application `@weekly` i.e. `0
+0 * * 0`. You can change this behavior by modifying `/etc/cron.d/tt-rss`:
+
+`docker-compose exec web vim /etc/cron.d/tt-rss`
 
 ## Backups
 
