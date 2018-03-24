@@ -1,9 +1,8 @@
 FROM debian:9
 
-ENV TTRSS_SRC=/usr/src/tt-rss \
-    TTRSS_DIR=/srv/www/tt-rss
+ENV TTRSS_DIR /srv/www/tt-rss
 
-WORKDIR $TTRSS_SRC
+WORKDIR /usr/src/tt-rss
 COPY files .
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -32,9 +31,9 @@ RUN chmod 644 supervisor.conf apache.conf cron/crontab && \
     cp supervisor.conf /etc/supervisor/conf.d/tt-rss.conf && \
     cp apache.conf /etc/apache2/sites-available/000-default.conf && \
     cp cron/crontab /etc/cron.d/tt-rss && \
-    ln -s $TTRSS_SRC/cron/update /usr/local/bin/
+    ln -s /usr/src/tt-rss/cron/update /usr/local/bin/
 
-VOLUME $TTRSS_DIR
+VOLUME [$TTRSS_DIR, "/etc/cron.d"]
 
 EXPOSE 80
 
