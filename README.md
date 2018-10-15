@@ -1,4 +1,4 @@
-# tt-rss_docker
+# docker-tt-rss
 
 Here's a [Docker](https://www.docker.com/) multi-container application to setup
 an instance of [Tiny Tiny RSS](https://tt-rss.org/) locally, as quickly and

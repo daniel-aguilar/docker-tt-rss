@@ -3,7 +3,7 @@ version: "3.7"
 services:
   web:
     build: ./image
-    image: tt-rss_docker
+    image: docker-tt-rss
     volumes:
       - type: volume
         source: web-data
