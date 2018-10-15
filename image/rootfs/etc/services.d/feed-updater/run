@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+s6-setuidgid www-data /srv/www/tt-rss/update_daemon2.php

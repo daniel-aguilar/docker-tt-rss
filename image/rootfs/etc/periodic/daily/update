@@ -1,0 +1,2 @@
+#!/bin/sh
+s6-setuidgid www-data git -C /srv/www/tt-rss pull

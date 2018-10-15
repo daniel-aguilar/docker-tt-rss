@@ -41,10 +41,8 @@ unless manually stopped:
 
 ## Updating TT-RSS
 
-The `web` service has a cron job which updates the application `@weekly` i.e. `0
-0 * * 0`. You can change this behavior by modifying `/etc/cron.d/tt-rss`:
-
-`docker-compose exec web vim /etc/cron.d/tt-rss`
+The `web` service has a cron job which updates the application daily at UTC
+2:00. You can set a different time by editing the Dockerfile.
 
 ## Backups
 

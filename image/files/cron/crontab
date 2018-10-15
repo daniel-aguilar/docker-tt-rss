@@ -1,1 +1,0 @@
-@weekly root /usr/local/bin/update >> /var/log/tt-rss.log 2>&1
