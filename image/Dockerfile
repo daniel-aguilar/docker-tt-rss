@@ -28,9 +28,7 @@ RUN set -ex \
 	&& git clone --depth 1 https://tt-rss.org/git/tt-rss.git /srv/www/tt-rss \
 	&& chown -R www-data:www-data /srv/www/tt-rss \
 	# Set 'daily' definition to UTC 2:00
-	&& sed -ri '/daily$/ { s/(^0\t)[0-9]+/\12/ }' /etc/crontabs/root \
-	&& sed -ri 's/^(user = ).*/\1www-data/' /etc/php7/php-fpm.d/www.conf \
-	&& sed -ri 's/^(group = ).*/\1www-data/' /etc/php7/php-fpm.d/www.conf
+	&& sed -ri '/daily$/ { s/(^0\t)[0-9]+/\12/ }' /etc/crontabs/root
 
 ADD rootfs /
 

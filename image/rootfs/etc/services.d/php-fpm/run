@@ -1,2 +1,2 @@
 #!/usr/bin/execlineb -P
-php-fpm7 -F
+php-fpm7
