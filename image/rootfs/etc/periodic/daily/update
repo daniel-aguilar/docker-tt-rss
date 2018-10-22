@@ -1,2 +1,3 @@
 #!/bin/sh
 s6-setuidgid www-data git -C /srv/www/tt-rss pull
+echo $(date) TT-RSS was updated
