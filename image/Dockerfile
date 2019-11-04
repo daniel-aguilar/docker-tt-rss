@@ -1,12 +1,11 @@
 FROM nginx:1.14-alpine
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.7.0/s6-overlay-amd64.tar.gz /tmp/
-RUN set -x \
-	&& tar -xzf /tmp/s6-overlay-amd64.tar.gz -C / \
-	&& addgroup -g 82 -S www-data \
-	&& adduser -u 82 -D -S -G www-data www-data
+RUN tar -xzf /tmp/s6-overlay-amd64.tar.gz -C /
 
 RUN set -ex \
+	&& addgroup -g 82 -S www-data \
+	&& adduser -u 82 -D -S -G www-data www-data \
 	&& apk --no-cache add \
 		git \
 		php7 \
