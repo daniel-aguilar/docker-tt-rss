@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
 
   db:
-    image: postgres:10-alpine
+    image: postgres:11-alpine
     volumes:
       - type: volume
         source: db-data

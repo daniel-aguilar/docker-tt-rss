@@ -1,11 +1,11 @@
-FROM nginx:1.14-alpine
+FROM nginx:1.16-alpine
 
-ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.7.0/s6-overlay-amd64.tar.gz /tmp/
+ADD https://github.com/just-containers/s6-overlay/releases/download/v1.22.1.0/s6-overlay-amd64.tar.gz /tmp/
 RUN tar -xzf /tmp/s6-overlay-amd64.tar.gz -C /
 
 RUN set -ex \
-	&& addgroup -g 82 -S www-data \
-	&& adduser -u 82 -D -S -G www-data www-data \
+	# nginx package creates the www-data group
+	&& adduser -u 82 -SDHG www-data www-data \
 	&& apk --no-cache add \
 		git \
 		php7 \
