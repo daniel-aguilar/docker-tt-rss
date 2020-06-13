@@ -1,6 +1,6 @@
-FROM nginx:1.16-alpine
+FROM nginx:1.19-alpine
 
-ADD https://github.com/just-containers/s6-overlay/releases/download/v1.22.1.0/s6-overlay-amd64.tar.gz /tmp/
+ADD https://github.com/just-containers/s6-overlay/releases/download/v2.0.0.1/s6-overlay-amd64.tar.gz /tmp/
 RUN tar -xzf /tmp/s6-overlay-amd64.tar.gz -C /
 
 RUN set -ex \

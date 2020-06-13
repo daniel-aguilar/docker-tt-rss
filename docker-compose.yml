@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.8"
 
 services:
   web:
@@ -16,7 +16,7 @@ services:
     restart: unless-stopped
 
   db:
-    image: postgres:11-alpine
+    image: postgres:12-alpine
     volumes:
       - type: volume
         source: db-data
