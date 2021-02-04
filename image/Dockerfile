@@ -27,7 +27,7 @@ RUN set -ex \
 	&& git clone --depth 1 https://git.tt-rss.org/fox/tt-rss.git /srv/www/tt-rss \
 	&& chown -R www-data:www-data /srv/www/tt-rss \
 	# Set 'daily' definition to UTC 2:00
-	&& sed -ri '/daily$/ { s/(^0\t)[0-9]+/\12/ }' /etc/crontabs/root
+	&& sed -ri '/daily$/ s/(^0\t)[0-9]+/\12/' /etc/crontabs/root
 
 ADD rootfs /
 
