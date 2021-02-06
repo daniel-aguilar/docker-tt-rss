@@ -9,20 +9,19 @@ RUN set -ex \
 	&& apk --no-cache add \
 		git \
 		php7 \
-		php7-fpm \
 		php7-curl \
-		php7-mbstring \
-		php7-fileinfo \
-		php7-curl \
-		php7-posix \
-		php7-json \
-		php7-gd \
-		php7-pgsql \
-		php7-pdo_pgsql \
 		php7-dom \
+		php7-fileinfo \
+		php7-fpm \
+		php7-gd \
 		php7-iconv \
 		php7-intl \
+		php7-json \
+		php7-mbstring \
 		php7-pcntl \
+		php7-pdo_pgsql \
+		php7-pgsql \
+		php7-posix \
 		php7-session \
 	&& git clone --depth 1 https://git.tt-rss.org/fox/tt-rss.git /srv/www/tt-rss \
 	&& chown -R www-data:www-data /srv/www/tt-rss \
