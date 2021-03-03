@@ -5,6 +5,7 @@ services:
     volumes:
       - web-data:/srv/www/tt-rss
     container_name: rss_web
+    env_file: ./image/config.env
     ports:
       - "127.0.0.1:80:80"
     depends_on:
