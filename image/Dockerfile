@@ -23,6 +23,7 @@ RUN set -ex \
 		php7-pgsql \
 		php7-posix \
 		php7-session \
+	&& git config --global pull.rebase false \
 	&& git clone --depth 1 https://git.tt-rss.org/fox/tt-rss.git /srv/www/tt-rss \
 	&& chown -R www-data:www-data /srv/www/tt-rss \
 	# Set 'daily' definition to UTC 2:00
