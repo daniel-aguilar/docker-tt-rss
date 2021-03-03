@@ -1,6 +1,6 @@
 #!/bin/bash
 
-backups_dir=/var/lib/postgresql
+backups_dir=/tmp
 backup_filename=$(date +%Y-%m-%d_%H-%M).sql
 
 docker-compose exec db pg_dump\
