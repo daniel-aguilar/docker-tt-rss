@@ -29,7 +29,7 @@ RUN set -ex \
 	# Set 'daily' definition to UTC 2:00
 	&& sed -ri '/daily$/ s/(^0\t)[0-9]+/\12/' /etc/crontabs/root
 
-ADD rootfs /
+COPY rootfs /
 
 VOLUME ["/srv/www/tt-rss"]
 
