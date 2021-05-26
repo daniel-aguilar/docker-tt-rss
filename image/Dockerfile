@@ -12,6 +12,7 @@ RUN set -ex \
 		php8 \
 		php8-curl \
 		php8-dom \
+		php8-exif \
 		php8-fileinfo \
 		php8-fpm \
 		php8-gd \
@@ -24,6 +25,8 @@ RUN set -ex \
 		php8-pgsql \
 		php8-posix \
 		php8-session \
+		php8-xml \
+		php8-zip \
 	&& git config --global pull.rebase false \
 	&& git clone --depth 1 https://git.tt-rss.org/fox/tt-rss.git /srv/www/tt-rss \
 	&& chown -R www-data:www-data /srv/www/tt-rss \
