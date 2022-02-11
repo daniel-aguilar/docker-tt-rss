@@ -1,7 +1,7 @@
 # docker-tt-rss
 
-**Deprecation Notice:** This project is being deprecated in favor of
-the official Docker compose setup.
+**Deprecation Notice:** This project has been deprecated in favor of the
+official Docker compose setup.
 
 Here's a [Docker](https://www.docker.com/) multi-container application to setup
 an instance of [Tiny Tiny RSS](https://tt-rss.org/) locally, as quickly and
